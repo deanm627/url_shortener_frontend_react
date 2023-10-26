@@ -1,5 +1,21 @@
 import axios from "axios";
 import {useState} from "react";
+import styled from 'styled-components';
+
+const FormWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+
+    label {
+        margin: 5px 0;
+    }
+
+    button {
+        margin: 15px 0;
+        width: 50%;
+    }
+`
 
 export const Login = () => {
 
@@ -29,36 +45,29 @@ export const Login = () => {
         localStorage.setItem('user_id', data.user_id);
         localStorage.setItem('first_name', data.first_name);
         axios.defaults.headers.common['Authorization'] = `Bearer ${data['access']}`;
-        window.location.href = '/'
+        window.location.href = '/userhome'
     }
-   return(
+   return (
      <div>
        <form onSubmit={submit}>
-         <div>
-           <h3>Sign In</h3>
-           <div>
-             <label>Username</label>
-             <input 
-               placeholder="Enter Username" 
-               name='username'  
-               type='text' value={username}
-               required 
-               onChange={e => setUsername(e.target.value)}/>
-           </div>
-           <div>
-             <label>Password</label>
-             <input name='password' 
-               type="password"     
-               placeholder="Enter password"
-               value={password}
-               required
-               onChange={e => setPassword(e.target.value)}/>
-           </div>
-           <div>
-             <button type="submit">Submit</button>
-           </div>
-         </div>
-      </form>
-    </div>
+         <FormWrapper>
+           <h2>Sign In:</h2>
+           <label>Username</label>
+           <input
+             name='username'
+             type='text'
+             value={username}
+             required
+             onChange={e => setUsername(e.target.value)} />
+           <label>Password</label>
+           <input name='password'
+             type="password"
+             value={password}
+             required
+             onChange={e => setPassword(e.target.value)} />
+           <button type="submit">Submit</button>
+         </FormWrapper>
+       </form>
+     </div>
     )
 }

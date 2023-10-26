@@ -24,8 +24,12 @@ export function Navigation() {
       return ( 
         <>
             <NavWrapper>    
+                <div>
+                    <Link to="/">Home</Link>
+                </div>
                 <div> 
-                    {isAuth ? <Link to ="/">Home</Link> : null}
+                    {isAuth ? <Link to ="/userhome">My URLs</Link> : 
+                            <Link to ="/register">Register</Link> }
                 </div>
                 <div>
                     {isAuth ? <Link to ="/logout">Logout</Link> :  

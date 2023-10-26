@@ -12,7 +12,7 @@ export const Logout = () => {
                  {withCredentials: true});
            localStorage.clear();
            axios.defaults.headers.common['Authorization'] = null;
-           window.location.href = '/login'
+           window.location.href = '/'
            } catch (e) {
              console.log('logout not working', e)
            }
