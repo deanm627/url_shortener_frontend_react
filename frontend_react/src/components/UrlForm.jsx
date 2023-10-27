@@ -40,7 +40,7 @@ export default function UrlForm() {
 
         // Create the POST requuest
         const {data} = await                                                                            
-                       axios.post('http://localhost:8000/urls/',
+                       axios.post('https://ccs-url-shortener-fxgk.onrender.com/urls/',
                        bodyFormData, 
                        {headers: 
                             {'Authorization': `Bearer ${token}`,

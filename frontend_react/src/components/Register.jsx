@@ -39,7 +39,7 @@ export default function Register() {
 
         // Create the POST requuest
         const {data} = await                                                                            
-                       axios.post('http://localhost:8000/register/',
+                       axios.post('https://ccs-url-shortener-fxgk.onrender.com/register/',
                        bodyFormData, 
                        {headers: 
                             {'Content-Type': 'multipart/form-data'}

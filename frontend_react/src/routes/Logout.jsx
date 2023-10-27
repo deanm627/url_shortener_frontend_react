@@ -6,7 +6,7 @@ export const Logout = () => {
        (async () => {
          try {
            const {data} = await  
-                 axios.post('http://localhost:8000/logout/',{
+                 axios.post('https://ccs-url-shortener-fxgk.onrender.com/logout/',{
                  refresh_token:localStorage.getItem('refresh_token')
                  } ,{headers: {'Content-Type': 'application/json'}},  
                  {withCredentials: true});

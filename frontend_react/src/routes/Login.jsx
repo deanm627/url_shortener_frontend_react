@@ -31,7 +31,7 @@ export const Login = () => {
               };
          // Create the POST requuest
          const {data} = await                                                                            
-                        axios.post('http://localhost:8000/token/',
+                        axios.post('https://ccs-url-shortener-fxgk.onrender.com/token/',
                         user, 
                         {headers: 
                           {'Content-Type': 'application/json'}

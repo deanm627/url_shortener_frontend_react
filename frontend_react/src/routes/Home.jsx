@@ -27,7 +27,7 @@ export const Home = () => {
         else {
             (async () => {
                 try {
-                    await axios.get(`http://127.0.0.1:8000/url/userURLs/?user=${user_id}`, 
+                    await axios.get(`https://ccs-url-shortener-fxgk.onrender.com/url/userURLs/?user=${user_id}`, 
                         {headers: 
                             {'Authorization': `Bearer ${token}`,
                             'Content-Type': 'application/json'}
